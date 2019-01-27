@@ -40,10 +40,10 @@ class DataBaseHandler {
         return arrayList;
     }
 
-    static JSONObject removeMember(int phone){
+    static JSONObject removeMember(long phone) {
         boolean success;
         try(Connection connection = SQLDataSourceManager.getInstance().getConnection();PreparedStatement statement = connection.prepareStatement("DELETE FROM `CLUB` WHERE `phone`=?")){
-            statement.setInt(1,phone);
+            statement.setLong(1, phone);
             success = statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

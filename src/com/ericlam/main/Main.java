@@ -1,9 +1,12 @@
 package com.ericlam.main;
 
-import com.ericlam.handler.WebHandler;
+import com.ericlam.handler.ClubHandler;
 import com.ericlam.utils.MySQLConfig;
 import com.ericlam.utils.OutPutResources;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +18,10 @@ public class Main {
         System.out.println("Launching Http API Server, using port: "+port);
         try{
             Server server = new Server(port);
-            server.setHandler(new WebHandler());
+            ServletContextHandler context = new ServletContextHandler();
+            context.addServlet(new ServletHolder(new ClubHandler()), "/club");
+            context.setMaxFormContentSize(50);
+            server.setHandler(context);
             server.start();
             server.join();
         } catch (Exception e) {
