@@ -1,0 +1,9 @@
+{
+  "host": "192.168.1.200",
+  "port": 3306,
+  "database": "Website_execrise",
+  "user": "Website",
+  "password": "6y805maCvrfZS65p",
+  "useSSL": false,
+  "webPort": 8080
+}
