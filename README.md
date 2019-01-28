@@ -1,3 +1,4 @@
 # SimpleWebAPI
 
-##showcase: https://api.hypernite.com/resources/club.php
+## showcase
+https://api.hypernite.com/resources/club.php
