@@ -16,7 +16,7 @@ public class MySQLConfig {
         return mySQLConfig;
     }
 
-    private MySQLConfig(){
+    private MySQLConfig() { //load the config
         try{
             FileReader fileReader = new FileReader("config.json");
             Object object = new JSONParser().parse(fileReader);
@@ -28,9 +28,9 @@ public class MySQLConfig {
 
     JSONObject getJsonObject() {
         return jsonObject;
-    }
+    } //get config map
 
-    public int getWebPort(){
+    public int getWebPort() { // get web port
         return (int)(long)jsonObject.get("webPort");
     }
 }

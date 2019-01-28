@@ -8,9 +8,9 @@ import java.io.InputStream;
 
 public class OutPutResources {
     public static boolean output(){
-        InputStream is = OutPutResources.class.getResourceAsStream("/resources/config.json");
+        InputStream is = OutPutResources.class.getResourceAsStream("/resources/config.json"); //get config from jar
         if (is == null) return false;
-        File out = new File("config.json");
+        File out = new File("config.json"); //output config
         if (!out.exists()){
             try {
                 FileUtils.copyInputStreamToFile(is,out);

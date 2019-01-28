@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet("/club")
+@WebServlet("/club") //when user goto /club
 public class ClubHandler extends HttpServlet {
-
+    //method handler
     @Override
-    protected void doHead(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+    protected void doHead(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException { //set header
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
         response.setHeader("Access-Control-Allow-Credentials", "true");
@@ -33,12 +33,12 @@ public class ClubHandler extends HttpServlet {
         String text = req.getParameter("phone");
         System.out.println("DEBUG: " + text);
         long phone = Long.parseLong(text);
-        response.getWriter().println(DataBaseHandler.removeMember(phone).toJSONString());
+        response.getWriter().println(DataBaseHandler.removeMember(phone).toJSONString()); // for return json
 
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { //do this method when http method is get
         doHead(request, response);
         System.out.println("Handling Get Method....");
         response.getWriter().println(JSONArray.toJSONString(DataBaseHandler.getAllNumbers()));

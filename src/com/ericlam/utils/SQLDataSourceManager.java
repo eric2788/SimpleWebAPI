@@ -17,6 +17,7 @@ public class SQLDataSourceManager {
         return SQLDataSourceManager;
     }
 
+    //get the datasource using hikari pool
     private SQLDataSourceManager(){
         JSONObject jsonObject = MySQLConfig.loadConfig().getJsonObject();
         HikariConfig config = new HikariConfig();

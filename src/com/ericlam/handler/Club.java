@@ -2,7 +2,7 @@ package com.ericlam.handler;
 
 import com.ericlam.utils.Level;
 
-public class Club {
+public class Club { // container
     private String familyname;
     private String givenname;
     private String sex;

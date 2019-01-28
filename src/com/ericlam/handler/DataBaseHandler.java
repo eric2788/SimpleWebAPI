@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-class DataBaseHandler {
+class DataBaseHandler { // what database things to do
     static ArrayList<JSONObject> getAllNumbers(){
         ArrayList<JSONObject> arrayList = new ArrayList<>();
         try(Connection connection = SQLDataSourceManager.getInstance().getConnection(); PreparedStatement statement = connection.prepareStatement("SELECT * FROM `CLUB`")){
